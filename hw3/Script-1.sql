@@ -66,13 +66,13 @@ select
     to_char(invoice_date, 'month') as month_name,
     sum(total) as sales_sum
 from invoice
-where 
+where e
     extract (year from invoice_date) = 2021
 group by 
     month_id, month_name 
 order by 
     month_id;
-
+eee
    
    
    

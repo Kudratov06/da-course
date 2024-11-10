@@ -1,17 +1,10 @@
-def factorial(n, method="iterative"):
-    if method == "iterative":
-        result = 1
-        for i in range(1, n + 1):
-            result *= i
-        return result
-    elif method == "recursive":
-        if n == 0 or n == 1:
-            return 1
-        else:
-            return n * factorial(n - 1, method="recursive")
-
-
-if __name__ == "__main__":
-    number = 5
-    method = input("Choose method (iterative/recursive): ").strip().lower()
-    print(f"Factorial of {number} is {factorial(number, method)}")
+n, m = map(int, input().split())
+a = [*map(int, input().split())]
+b = [*map(int, input().split())]
+ans = 10 ** 18
+res = 0
+for i in range(n - 1, -1, -1):
+    if i < m:
+        ans = min(ans, res + a[i])
+    res += min(a[i], b[i])
+print(ans)

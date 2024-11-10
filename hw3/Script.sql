@@ -41,7 +41,7 @@ offset 49;
 select 
 	name 
 from track
-where bytes / 1000000 > 100;
+where bytes / 100000 > 100;
 
 
 
